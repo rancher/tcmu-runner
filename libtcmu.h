@@ -115,6 +115,9 @@ struct tcmulib_cmd *tcmulib_async_command_init(struct tcmulib_cmd *cmd);
  */
 void tcmulib_async_command_complete(struct tcmu_device *dev, struct tcmulib_cmd *cmd, int result);
 
+/* Call when start processing commands (before calling get_next_command()) */
+void tcmulib_processing_start(struct tcmu_device *dev);
+
 /* Call when done processing commands (get_next_command() returned false.) */
 void tcmulib_processing_complete(struct tcmu_device *dev);
 
